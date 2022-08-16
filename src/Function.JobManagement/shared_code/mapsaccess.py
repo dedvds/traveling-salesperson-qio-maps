@@ -7,6 +7,7 @@ def getLatLon(address):
     params['api-version'] = 1.0
     params['subscription-key'] = os.environ["AzureMapsSubscriptionKey"]
     params['query'] = address
+    params['countrySet'] = 'DE'
     r = requests.get('https://atlas.microsoft.com/search/address/json', params=params)
 
     r_dict = r.json()
